@@ -15,44 +15,33 @@ interface Tokens {
 
 const tokenFilePath = path.join(__dirname, ".spotify_tokens.json");
 
-// Replace these
-const playlistName = "A Musical Journey Through Human Civilization";
+const playlistName = "Atmospheric Textures: Underlay No.3 Vibes";
 
 const tracks = [
-  "Carmina Burana: O Fortuna - Carl Orff",
-  "Beethoven's Symphony No. 9 in D Minor, Op. 125 'Ode to Joy': IV. Finale - Ludwig van Beethoven",
-  "Boléro - Maurice Ravel",
-  "Nessun Dorma - Giacomo Puccini",
-  "Gamelan Gong Kebyar - Traditional Balinese",
-  "Raga Jog - Ravi Shankar",
-  "The Blue Danube - Johann Strauss II",
-  "Swan Lake Suite, Op. 20: Scene - Pyotr Ilyich Tchaikovsky",
-  "Adagio for Strings, Op. 11 - Samuel Barber",
-  "Mbube (The Lion Sleeps Tonight) - Solomon Linda",
-  "Sakura - Traditional Japanese",
-  "A La Nanita Nana - Traditional Spanish",
-  "Funeral Song - Traditional Native American",
-  "Greensleeves - Traditional English",
-  "Kaval Sviri - Traditional Bulgarian",
-  "Toccata and Fugue in D Minor, BWV 565 - Johann Sebastian Bach",
-  "Adhan (Call to Prayer) - Traditional Islamic",
-  "Amazing Grace - Traditional",
-  "La Vie en Rose - Édith Piaf",
-  "Hallelujah Chorus from Messiah - George Frideric Handel",
-  "Kalinka - Traditional Russian",
-  "Arirang - Traditional Korean",
-  "Jalisco - Mariachi Vargas de Tecalitlán",
-  "Nkosi Sikelel' iAfrika - Traditional South African",
-  "Va Pensiero from Nabucco - Giuseppe Verdi",
-  "This Land Is Your Land - Woody Guthrie",
-  "Imagine - John Lennon",
-  "One Love - Bob Marley & The Wailers",
-  "What a Wonderful World - Louis Armstrong",
-  "Bohemian Rhapsody - Queen",
+  "Underlay No.3 - William Basinski",
+  "Avril 14th - Aphex Twin",
+  "4'33\" - John Cage",
+  "Weird Fishes/Arpeggi - Radiohead",
+  "Disintegration Loop 1.1 - William Basinski",
+  "Koyaanisqatsi - Philip Glass",
+  "Weightless - Marconi Union",
+  "Music for Airports - Brian Eno",
+  "Godspeed You! Black Emperor - Mladic",
+  "An Ending (Ascent) - Brian Eno",
+  "Aoba - Ryuichi Sakamoto",
+  "Xerrox Vol 3 - Alva Noto",
+  "Echoes - Pink Floyd",
+  "First Sleep - Cliff Martinez",
+  "Spiegel im Spiegel - Arvo Pärt",
+  "Atmospheres - György Ligeti",
+  "Maximalist - Nils Frahm",
+  "Lux Aeterna - Clint Mansell",
+  "Morning Sun - Nicholas Britell",
+  "Rotation - Steve Reich",
 ];
 
 const description =
-  "Embark on a musical journey through the entirety of human civilization. This playlist features music from various cultures, time periods, and genres, reflecting the diversity and richness of human history. Enjoy traditional songs, classical masterpieces, and modern pieces that capture significant cultural and historical milestones.";
+  "Inspired by 'Underlay No.3,' this playlist features a mix of ambient, experimental, and atmospheric tracks that focus on minimalism, texture, and introspective soundscapes. Dive into the world of William Basinski, Brian Eno, Aphex Twin, and more, and let the subtle layers and gentle tones guide you through a reflective listening journey.";
 
 async function storeTokens(tokens: Tokens) {
   await Bun.write(tokenFilePath, JSON.stringify(tokens, null, 2));
@@ -228,6 +217,9 @@ async function main() {
       );
     }
   } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
     console.log("No valid tokens available, starting authorization...");
     await authorize();
   }
