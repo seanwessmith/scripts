@@ -15,33 +15,33 @@ interface Tokens {
 
 const tokenFilePath = path.join(__dirname, ".spotify_tokens.json");
 
-const playlistName = "Atmospheric Textures: Underlay No.3 Vibes";
+const playlistName = "Threads of Introspection";
 
 const tracks = [
-  "Underlay No.3 - William Basinski",
-  "Avril 14th - Aphex Twin",
-  "4'33\" - John Cage",
-  "Weird Fishes/Arpeggi - Radiohead",
-  "Disintegration Loop 1.1 - William Basinski",
-  "Koyaanisqatsi - Philip Glass",
-  "Weightless - Marconi Union",
-  "Music for Airports - Brian Eno",
-  "Godspeed You! Black Emperor - Mladic",
-  "An Ending (Ascent) - Brian Eno",
-  "Aoba - Ryuichi Sakamoto",
-  "Xerrox Vol 3 - Alva Noto",
-  "Echoes - Pink Floyd",
-  "First Sleep - Cliff Martinez",
-  "Spiegel im Spiegel - Arvo Pärt",
-  "Atmospheres - György Ligeti",
-  "Maximalist - Nils Frahm",
-  "Lux Aeterna - Clint Mansell",
-  "Morning Sun - Nicholas Britell",
-  "Rotation - Steve Reich",
+  "Motion Sickness - Phoebe Bridgers",
+  "First Defeat - Noah Gundersen",
+  "The Stable Song - Gregory Alan Isakov",
+  "Lost in My Mind - The Head and the Heart",
+  "Evelyn - Gregory Alan Isakov",
+  "I Can't Go On Without You - Kaleo",
+  "Blood - The Middle East",
+  "Slow Dancing in a Burning Room - John Mayer",
+  "Ghost Towns - Radical Face",
+  "After Rain - Dermot Kennedy",
+  "Georgia - Vance Joy",
+  "Angeline - John Craigie",
+  "Canyon Moon - Andrew McMahon in the Wilderness",
+  "Mykonos - Fleet Foxes",
+  "Blood Bank - Bon Iver",
+  "Stubborn Love - The Lumineers",
+  "Blue Skies - Noah and the Whale",
+  "Heartbeats - José González",
+  "Holocene - Bon Iver",
+  "Sons & Daughters - The Decemberists",
 ];
 
 const description =
-  "Inspired by 'Underlay No.3,' this playlist features a mix of ambient, experimental, and atmospheric tracks that focus on minimalism, texture, and introspective soundscapes. Dive into the world of William Basinski, Brian Eno, Aphex Twin, and more, and let the subtle layers and gentle tones guide you through a reflective listening journey.";
+  "A collection of introspective tracks that delve into themes of self-reflection and emotional turmoil, echoing the essence of 'Haven't Had My Shit Together' by Paul Moody and The Restless Age.";
 
 async function storeTokens(tokens: Tokens) {
   await Bun.write(tokenFilePath, JSON.stringify(tokens, null, 2));
